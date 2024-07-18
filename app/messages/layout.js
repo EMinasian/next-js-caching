@@ -1,7 +1,13 @@
+// export const revalidate = 5;
+// export const dynamic = 'force-dynamic'
+
 export default async function MessagesLayout({ children }) {
-  const response = await fetch('http://localhost:8080/messages', {
+  const response = await fetch("http://localhost:8080/messages", {
+    // next: {
+    //   revalidate: 5
+    // },
     headers: {
-      'X-ID': 'layout',
+      "X-ID": "layout",
     },
   });
   const messages = await response.json();

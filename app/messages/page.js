@@ -1,9 +1,10 @@
-import Messages from '@/components/messages';
+import Messages from "@/components/messages";
 
 export default async function MessagesPage() {
-  const response = await fetch('http://localhost:8080/messages', {
+  const response = await fetch("http://localhost:8080/messages", {
+    // cache: 'force-cache',
     headers: {
-      'X-ID': 'page',
+      "X-ID": "page",
     },
   });
   const messages = await response.json();
