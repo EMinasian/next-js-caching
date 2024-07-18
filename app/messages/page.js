@@ -3,6 +3,9 @@ import Messages from "@/components/messages";
 export default async function MessagesPage() {
   const response = await fetch("http://localhost:8080/messages", {
     // cache: 'force-cache',
+    next: {
+      tags: ["msg"],
+    },
     headers: {
       "X-ID": "page",
     },
